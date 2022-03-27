@@ -652,7 +652,7 @@ console.log("buyNFT!");
 if(false){
     window.location = "https://metamask.app.link/send/pay-0x41f78325bFff15682CbB6972E77D873cdc3f14Ce?value=5e18";
 }else{
-    var web3 = new Web3(new Web3.providers.HttpProvider('https://ropsten.infura.io/v3/695945a222de4a8082d28507506f3f37'));
+    var web3 = new Web3(new Web3.providers.HttpProvider('http://10.0.4.24:8545'));
     const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
     const account = accounts[0];
     const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
@@ -660,7 +660,7 @@ if(false){
     await provider.send("eth_requestAccounts", []);
     const signer = provider.getSigner();
     console.log("Account:", await signer.getAddress());
-    const toAddress = "0xBdc0d07180c9BcD3D4d09946935F0B3DC0314f8a";
+    const toAddress = "0xe10bfa8c68b236084BE245b26e2B4fF35bb9965f";
     /*
     const amount = 5;
     const amountToSend = web3.utils.toWei(String(amount), "ether");
@@ -698,7 +698,7 @@ const abi = [
 const erc1155_rw = new ethers.Contract(toAddress, abi, signer);
 
 
-var whiskyContract = new web3.eth.Contract(contractABI, toAddress, {});
+//var whiskyContract = new web3.eth.Contract(contractABI, toAddress, {});
 
 const amount = 0.7;
 const amountToSend = web3.utils.toWei(String(amount), "ether");
