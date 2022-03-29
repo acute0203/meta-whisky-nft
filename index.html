@@ -648,10 +648,10 @@ async function buyNFT(){
 console.log("buyNFT!");
 
 //const web3 = new Web3(Web3.givenProvider || "http://127.0.0.1:8545");
-//console.log(web3);
+alert(window.ethereum);
 const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
 const account = accounts[0];
-alert(account);
+
 if(false){
     window.location = "https://metamask.app.link/dapp/acute0203.github.io/meta-whisky-nft/";
 }else{
