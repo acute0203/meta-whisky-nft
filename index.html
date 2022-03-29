@@ -647,14 +647,9 @@ function mobileAndTabletCheck() {
 async function buyNFT(){
 console.log("buyNFT!");
 
-//const web3 = new Web3(Web3.givenProvider || "http://127.0.0.1:8545");
-alert(window.ethereum);
-const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-const account = accounts[0];
-
-if(false){
+if(window.ethereum === undefined){
     window.location = "https://metamask.app.link/dapp/acute0203.github.io/meta-whisky-nft/";
-}else{
+} else {
     const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
     const account = accounts[0];
     const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
