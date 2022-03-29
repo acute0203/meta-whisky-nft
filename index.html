@@ -652,7 +652,6 @@ console.log("buyNFT!");
 if(false){
     window.location = "https://metamask.app.link/send/pay-0x41f78325bFff15682CbB6972E77D873cdc3f14Ce?value=5e18";
 }else{
-    //var web3 = new Web3(new Web3.providers.HttpProvider('http://10.0.4.24:8545'));
     const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
     const account = accounts[0];
     const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
@@ -701,7 +700,7 @@ const erc1155_rw = new ethers.Contract(toAddress, abi, signer);
 //var whiskyContract = new web3.eth.Contract(contractABI, toAddress, {});
 
 const amount = 0.7;
-const amountToSend = web3.utils.toWei(String(amount), "ether");
+const amountToSend = ethers.utils.parseEther(String(amount));
 let tx = await erc1155_rw.buyNFTWithEther({from: account,value: amountToSend});
 let receipt = await tx.wait();
 let MintIDEvent = receipt.events.pop();
