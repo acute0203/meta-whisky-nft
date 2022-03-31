@@ -33,7 +33,9 @@
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
+if (window.ethereum !== undefined){
+    const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
+}
 const toAddress = "0xf3B1bE6C9c9c63365931B803909703154Ed2b4c0";
 async function showNFTIDList(){
     const nftListString = await getNFTIDList();
@@ -140,6 +142,7 @@ $(document).on('click', '.metaLink', function() {
 });
 
 setInterval(async function () {
+    if (window.ethereum !== undefined){
     const nftListString = await getNFTIDList();
         if (nftListString.length===0){
             $(".nftIDList").each(function(){
@@ -150,7 +153,7 @@ setInterval(async function () {
             $(this).css("display", "block");
     });
     }
-
+}
 }, 3000);
 
     </script>
