@@ -47,7 +47,7 @@ async function showNFTIDList(){
 async function getNFTIDList(){
     const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
     const account = accounts[0];
-    const toAddress = "0x79845A3F5603c8bb39358CD579766A314B14F710";
+    const toAddress = "0xf3B1bE6C9c9c63365931B803909703154Ed2b4c0";
     const abi = [
         "event MintID(uint256)",
         "function buyNFTWithEther() external payable returns (uint256)",
@@ -77,7 +77,7 @@ if(window.ethereum === undefined){
     await provider.send("eth_requestAccounts", []);
     const signer = provider.getSigner();
     console.log("Account:", await signer.getAddress());
-    const toAddress = "0x79845A3F5603c8bb39358CD579766A314B14F710";
+    const toAddress = "0xf3B1bE6C9c9c63365931B803909703154Ed2b4c0";
 var projectId = "695945a222de4a8082d28507506f3f37";
 var projectSecret = "08b9d559fba740a0a9bb41a8c747174d";
 var providera = new ethers.providers.InfuraProvider("ropsten", {
