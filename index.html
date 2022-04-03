@@ -37,7 +37,7 @@
 if (window.ethereum !== undefined){
     provider = new ethers.providers.Web3Provider(window.ethereum, "any");
 }
-const toAddress = "0x9152Ff7F55Fb4335326fD39a482CfbC735637Fe9";//"0xf3B1bE6C9c9c63365931B803909703154Ed2b4c0";
+const toAddress = "0xba4B12bd1fC37a7F767BBD521f8f94930D080e2C";//"0xf3B1bE6C9c9c63365931B803909703154Ed2b4c0";
 async function showNFTIDList(){
     const nftListString = await getNFTIDList();
 
@@ -113,7 +113,7 @@ const abi = [
 ];
 
 const erc1155_rw = new ethers.Contract(toAddress, abi, signer);
-const amount = 0.7;
+const amount = 0.1;
 const amountToSend = ethers.utils.parseEther(String(amount));
 let tx = await erc1155_rw.buyNFTWithEther({from: account,value: amountToSend});
 Swal.fire({
